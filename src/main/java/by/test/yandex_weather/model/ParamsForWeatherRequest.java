@@ -1,6 +1,6 @@
-package by.test.yandex_weather.connector;
+package by.test.yandex_weather.model;
 
-public enum ParamsForRequest {
+public enum ParamsForWeatherRequest {
     LAT("lat"),
     LON("lon"),
     EXTRA("extra"),
@@ -8,7 +8,7 @@ public enum ParamsForRequest {
 
     private String param;
 
-    ParamsForRequest(String param) {
+    ParamsForWeatherRequest(String param) {
         this.param = param;
     }
 

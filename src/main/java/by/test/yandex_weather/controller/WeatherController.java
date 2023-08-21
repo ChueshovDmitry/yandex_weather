@@ -3,7 +3,7 @@ package by.test.yandex_weather.controller;
 import by.test.yandex_weather.dto.forecast.WeatherModel;
 import by.test.yandex_weather.dto.weather.RootDto;
 import by.test.yandex_weather.model.RequestModel;
-import by.test.yandex_weather.service.WeatherService;
+import by.test.yandex_weather.service.impl.WeatherService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,9 +1,10 @@
-package by.test.yandex_weather.service;
+package by.test.yandex_weather.service.impl;
 
-import by.test.yandex_weather.connector.WheaterConnector;
+import by.test.yandex_weather.connector.impl.WheaterConnector;
 import by.test.yandex_weather.dto.forecast.WeatherModel;
 import by.test.yandex_weather.dto.weather.Forecast;
 import by.test.yandex_weather.dto.weather.RootDto;
+import by.test.yandex_weather.service.AbstractWeatherService;
 import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 
