@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.Duration;
+
 /**
  * @Author Dmitry Chueshov
  **/
@@ -13,6 +15,9 @@ public class WeatherConfiguration {
 
     @Bean
     public RestTemplate restTemplate(){
-        return new RestTemplateBuilder().build();
+        return new RestTemplateBuilder()
+                .setConnectTimeout(Duration.ofSeconds(500))
+                .setReadTimeout(Duration.ofSeconds(500))
+                .build();
     }
 }

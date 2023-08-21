@@ -23,20 +23,22 @@ public class WeatherService implements AbstractWeatherService {
     }
 
     @Override
-    public RootDto getForecast(String put, String lon) {
-        HttpEntity<RootDto> forEntity = wheaterConnector.getForEntity(put, lon);
-        return forEntity.getBody();
+    public RootDto getForecast(String lat, String lon) {
+        HttpEntity<RootDto> forEntity = wheaterConnector.getForEntity(lat,lon);
+        RootDto body = forEntity.getBody();
+        return body;
     }
 
     @Override
-    public WeatherModel getTodayForecast(String put, String lon) {
-        RootDto forecast = getForecast(put, lon);
+    public WeatherModel getTodayForecast(String lat, String lon) {
+        RootDto forecast = getForecast(lat, lon);
         List<Forecast> filterList = forecast.getForecasts().stream().filter(forecastModel -> forecastModel.getDate().equals(LocalDate.now().toString())).collect(Collectors.toList());
         WeatherModel model = WeatherModel.builder()
                 .date(forecast.getNow_dt().toString())
                 .temp(forecast.getFact().getTemp())
-                .sunrise(forecast.getForecasts().stream().findFirst().get().getSunrise())
-                .set_end(forecast.getForecasts().stream().findFirst().get().getSet_end()).build();
+                .moon_code(filterList.stream().findFirst().get().getMoon_code())
+                .sunrise(filterList.stream().findFirst().get().getSunrise())
+                .set_end(filterList.stream().findFirst().get().getSet_end()).build();
         return model;
     }
 }

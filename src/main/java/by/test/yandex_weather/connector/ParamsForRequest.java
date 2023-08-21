@@ -1,7 +1,7 @@
 package by.test.yandex_weather.connector;
 
 public enum ParamsForRequest {
-    PUT("put"),
+    LAT("lat"),
     LON("lon"),
     EXTRA("extra"),
     API_KEY("X-Yandex-API-Key");
