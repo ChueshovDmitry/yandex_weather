@@ -10,3 +10,7 @@
 
 документация яндекса
 https://yandex.ru/dev/weather/doc/dg/concepts/about.html
+
+
+stack
+- Spring boot
