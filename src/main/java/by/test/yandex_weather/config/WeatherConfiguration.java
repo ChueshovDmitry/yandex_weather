@@ -16,8 +16,6 @@ public class WeatherConfiguration {
     @Bean
     public RestTemplate restTemplate(){
         return new RestTemplateBuilder()
-                .setConnectTimeout(Duration.ofSeconds(500))
-                .setReadTimeout(Duration.ofSeconds(500))
                 .build();
     }
 }
