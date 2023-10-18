@@ -17,9 +17,9 @@ import javax.validation.constraints.Min;
 public class RequestModel {
     @Min(-90)
     @Max(90)
-    private Integer lat;
+    private Long lat;
 
     @Min(-180)
     @Max(180)
-    private Integer lon;
+    private Long lon;
 }

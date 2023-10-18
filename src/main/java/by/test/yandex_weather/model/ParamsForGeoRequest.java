@@ -3,7 +3,7 @@ package by.test.yandex_weather.model;
 public enum ParamsForGeoRequest {
     APIKEY("apikey"),
     GEOCODE("geocode"),
-    FORMAT("extra");
+    FORMAT("format");
 
     private String param;
 
